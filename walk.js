@@ -218,11 +218,20 @@
 
   /* ---------- Contact form ---------- */
 
+  // Bookings are emailed through FormSubmit (formsubmit.co): Kaif gets each
+  // booking and Amaan is copied. The very first submission sends Kaif a one-time
+  // activation email; bookings are delivered once that link has been clicked.
+  const BOOKING_TO = 'kaif@kaymanconstructions.com';
+  const BOOKING_CC = 'amaan@kaymanconstructions.com';
+
   const form = document.querySelector('.contact-form');
   if (form) {
     const err = form.querySelector('.form-error');
     const done = form.querySelector('.form-done');
-    form.addEventListener('submit', e => {
+    const button = form.querySelector('button[type="submit"]');
+    const label = button.textContent;
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const missing = [];
       form.querySelectorAll('[required]').forEach(f => {
@@ -236,9 +245,42 @@
         done.hidden = true;
         return;
       }
+
+      const data = Object.fromEntries(new FormData(form));
+      if (data._honey) return; // filled in by a bot
+      delete data._honey;
+
       err.hidden = true;
-      done.hidden = false;
-      form.querySelector('button[type="submit"]').disabled = true;
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${BOOKING_TO}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            Name: data.name,
+            Phone: data.phone,
+            'ZIP code': data.zip,
+            Email: data.email || 'Not given',
+            Project: data.type,
+            Notes: data.notes || 'None',
+            _subject: `New walkthrough request: ${data.name} (${data.type})`,
+            _cc: BOOKING_CC,
+            _replyto: data.email || BOOKING_TO,
+            _template: 'table',
+          }),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || String(json.success) === 'false') throw new Error(json.message || res.status);
+        form.querySelectorAll('input, select, textarea').forEach(f => { f.disabled = true; });
+        button.textContent = 'Walkthrough requested';
+        done.hidden = false;
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = label;
+        err.textContent = 'Your request didn’t go through. Please try again, or call Kaif at +1 (209) 351-1726.';
+        err.hidden = false;
+      }
     });
   }
 })();

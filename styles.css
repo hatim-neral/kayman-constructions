@@ -1032,3 +1032,6 @@ mark.todo {
 .home-about-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 64px; align-items: start; }
 .home-about-inner p { max-width: 34em; margin-bottom: 14px; }
 @media (max-width: 800px) { .home-about-inner { grid-template-columns: 1fr; } }
+
+/* spam trap: hidden from people, filled in by bots */
+.form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
