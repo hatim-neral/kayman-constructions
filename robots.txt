@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kaymanconstructions.com/sitemap.xml
+Sitemap: https://hatim-neral.github.io/kayman-constructions/sitemap.xml

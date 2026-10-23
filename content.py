@@ -3,7 +3,8 @@ Site content: services, service areas and projects.
 Edit this file, then run `python3 build.py` to regenerate the pages.
 """
 
-SITE_URL = 'https://www.kaymanconstructions.com'
+# Switch back to 'https://www.kaymanconstructions.com' once the domain points at the site
+SITE_URL = 'https://hatim-neral.github.io/kayman-constructions'
 BRAND = 'Kayman Constructions'
 TAGLINE = 'Build. Develop. Deliver.'
 
