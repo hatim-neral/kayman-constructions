@@ -3,6 +3,19 @@
   // Hidden start states in the CSS only apply under .motion, so the page reads fine without JS
   if (!reduced) document.documentElement.classList.add('motion');
 
+  // Mobile menu
+  const menuBtn = document.querySelector('.menu-btn');
+  if (menuBtn) {
+    const setOpen = open => {
+      document.body.classList.toggle('menu-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    menuBtn.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')));
+    document.querySelectorAll('.site-nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+  }
+
   // Staggered children (map dots, process steps) get their position as --i
   document.querySelectorAll('.map .places, .steps').forEach(group => {
     [...group.children].forEach((el, i) => el.style.setProperty('--i', i));

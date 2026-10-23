@@ -1035,3 +1035,64 @@ mark.todo {
 
 /* spam trap: hidden from people, filled in by bots */
 .form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* =====================================================================
+   Mobile
+   ===================================================================== */
+
+.menu-btn, .nav-call { display: none; }
+
+@media (max-width: 860px) {
+  .site-header { gap: 12px; }
+  .menu-btn {
+    display: grid; align-content: center; gap: 5px;
+    width: 44px; height: 44px; padding: 0 11px;
+    background: none; border: 1.5px solid rgba(246, 236, 221, 0.35); border-radius: 4px; cursor: pointer;
+    order: 3;
+  }
+  .menu-btn span { display: block; height: 2px; background: var(--paper); border-radius: 1px; transition: transform 0.25s, opacity 0.2s; }
+  .menu-open .menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-open .menu-btn span:nth-child(2) { opacity: 0; }
+  .menu-open .menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .header-cta { padding: 9px 12px; font-size: 0.9375rem; }
+
+  .site-nav {
+    display: flex; flex-direction: column; gap: 0;
+    position: fixed; top: var(--header-h); left: 0; right: 0;
+    margin: 0; padding: 8px var(--gutter) 24px;
+    background: var(--walnut);
+    font-size: 1.25rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-8px); opacity: 0; visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
+  .menu-open .site-nav { transform: none; opacity: 1; visibility: visible; }
+  .site-nav a { opacity: 1; padding: 14px 0; border-bottom: 1px solid rgba(246, 236, 221, 0.12); }
+  .nav-call { display: block; color: var(--brass-light); font-weight: 600; border-bottom: 0 !important; }
+}
+@media (max-width: 400px) {
+  .header-cta { font-size: 0.875rem; padding: 8px 10px; }
+}
+
+@media (max-width: 600px) {
+  .hero { top: calc(var(--header-h) + 124px); }
+  .hero h1 { font-size: clamp(2.6rem, 13vw, 3.4rem); }
+  .hero p { font-size: 1rem; margin-top: 14px; }
+  .hero-actions { margin-top: 20px; }
+  .hero-actions .btn { flex: 1 1 100%; text-align: center; }
+  .caption { bottom: 24px; }
+  .caption-service { font-size: 2rem; }
+  .caption-text { font-size: 1rem; }
+  .scroll-cue { display: none; }
+  .btn { padding: 13px 18px; }
+  .cta-actions { width: 100%; }
+  .cta-actions .btn { flex: 1 1 100%; text-align: center; }
+  .page-hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .ba-handle::after { width: 52px; height: 52px; margin: -26px 0 0 -26px; }
+  .ba-frame { max-height: none; }
+  .map .places text { font-size: 13px; }
+  .section-head { margin-bottom: 20px; }
+  .crumbs ol { font-size: 0.875rem; }
+}
+/* keep text inputs at 16px so iOS doesn't zoom in on focus */
+.field input, .field select, .field textarea { font-size: max(16px, 1rem); }

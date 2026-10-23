@@ -54,11 +54,13 @@ def header(p):
     {LOGO_MARK}
     <span class="brand-name">Kayman <span>Constructions</span></span>
   </a>
-  <nav class="site-nav" aria-label="Main">
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <nav class="site-nav" id="site-nav" aria-label="Main">
     <a href="{p}services/index.html">Services</a>
     <a href="{p}projects/index.html">Projects</a>
     <a href="{p}areas/index.html">Service area</a>
     <a href="{p}about.html">About</a>
+    <a class="nav-call" href="tel:{PHONE_TEL}">Call {PHONE}</a>
   </nav>
   <a class="header-cta" href="{p}index.html#contact">Book a walkthrough</a>
 </header>'''
