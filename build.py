@@ -90,7 +90,7 @@ def footer(p):
       <li><a href="{p}index.html#contact">Book a walkthrough</a></li>
     </ul></nav>
   </div>
-  <p class="wrap footer-credit">Walkthrough footage by Kindel Media on Pexels. Sample project photos from Unsplash.</p>
+  <p class="wrap footer-credit">Walkthrough footage by Kindel Media on Pexels. Sample project photos from Unsplash. 3D workers from Microsoft Rocketbox (MIT licence).</p>
 </footer>'''
 
 
@@ -117,7 +117,7 @@ def page(path, title, description, body, noindex=False, jsonld=()):
     robots = '\n  <meta name="robots" content="noindex">' if noindex else ''
     ld = ''.join(f'\n  <script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in jsonld)
     html = f'''<!doctype html>
-<html lang="en">
+<html lang="en" data-theme="yellow">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -133,7 +133,7 @@ def page(path, title, description, body, noindex=False, jsonld=()):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{p}styles.css">{ld}
+  <link rel="stylesheet" href="{p}styles.css?v=20261025000446">{ld}
 </head>
 <body class="subpage">
 {header(p)}
@@ -141,7 +141,7 @@ def page(path, title, description, body, noindex=False, jsonld=()):
 {body(p)}
 </main>
 {footer(p)}
-<script src="{p}site.js"></script>
+<script src="{p}site.js?v=20261025000446"></script>
 </body>
 </html>
 '''

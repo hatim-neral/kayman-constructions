@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="yellow">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kayman Constructions | Remodeling &amp; Renovation in Greater Houston</title>
   <meta name="description" content="Kayman Constructions remodels, renovates and builds homes across Greater Houston, Texas. Kitchens, bathrooms, whole-home renovations, additions and custom homes.">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kayman Constructions">
   <meta property="og:image" content="https://hatim-neral.github.io/kayman-constructions/img/brand/kayman-logo-share.jpg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261025000446">
   <!-- build:jsonld -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "Kayman Constructions", "slogan": "Build. Develop. Deliver.", "url": "https://hatim-neral.github.io/kayman-constructions/", "logo": "https://hatim-neral.github.io/kayman-constructions/img/brand/kayman-logo.png", "image": "https://hatim-neral.github.io/kayman-constructions/img/brand/kayman-logo-share.jpg", "telephone": "+1 (209) 351-1726", "email": "kaif@kaymanconstructions.com", "employee": [{"@type": "Person", "name": "Kaif", "email": "kaif@kaymanconstructions.com", "telephone": "+1 (209) 351-1726"}, {"@type": "Person", "name": "Amaan", "email": "amaan@kaymanconstructions.com", "telephone": "+1 (773) 349-5504"}], "areaServed": [{"@type": "Place", "name": "The Heights, TX"}, {"@type": "Place", "name": "Katy, TX"}, {"@type": "Place", "name": "Sugar Land, TX"}, {"@type": "Place", "name": "The Woodlands, TX"}, {"@type": "Place", "name": "Pearland, TX"}, {"@type": "Place", "name": "Bellaire, TX"}, {"@type": "Place", "name": "Memorial, TX"}, {"@type": "Place", "name": "Kingwood, TX"}], "address": {"@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US"}}</script>
 <!-- /build:jsonld -->
@@ -269,31 +270,47 @@
     </div>
   </section>
 
-  <section class="process" id="process">
-    <div class="wrap">
-      <h2 class="section-title">How a project goes</h2>
-      <ol class="steps" data-motion>
-        <li>
-          <h3>Walkthrough</h3>
-          <p>We walk your home with you, take measurements and talk through what you want and a realistic budget.</p>
-        </li>
-        <li>
-          <h3>Design and estimate</h3>
-          <p>You get drawings, material selections and a line-item estimate you can compare with anyone else's.</p>
-        </li>
-        <li>
-          <h3>Permits and schedule</h3>
-          <p>We handle permits and HOA approvals, then give you a start date and a calendar for the job.</p>
-        </li>
-        <li>
-          <h3>Build</h3>
-          <p>One project lead on site, a written update every week, and a swept site at the end of each day.</p>
-        </li>
-        <li>
-          <h3>Final walkthrough</h3>
-          <p>We walk the finished work with you, close out the punch list and hand over your warranty.</p>
-        </li>
-      </ol>
+  <section class="process build-story" id="process">
+    <h2 class="visually-hidden">How a project goes</h2>
+    <div class="bs-track">
+      <div class="bs-sticky wrap">
+        <ol class="bs-steps">
+          <li class="is-active">
+            <h3>Walkthrough</h3>
+            <p>We walk your home with you, take measurements and talk through what you want and a realistic budget.</p>
+          </li>
+          <li>
+            <h3>Design and estimate</h3>
+            <p>You get drawings, material selections and a line-item estimate you can compare with anyone else's.</p>
+          </li>
+          <li>
+            <h3>Permits and schedule</h3>
+            <p>We handle permits and HOA approvals, then give you a start date and a calendar for the job.</p>
+          </li>
+          <li>
+            <h3>Build</h3>
+            <p>One project lead on site, a written update every week, and a swept site at the end of each day.</p>
+          </li>
+          <li>
+            <h3>Final walkthrough</h3>
+            <p>We walk the finished work with you, close out the punch list and hand over your warranty.</p>
+          </li>
+        </ol>
+
+        <div class="bs-hud" aria-hidden="true">
+          <span class="bs-kicker">How a project goes</span>
+          <span class="bs-count"><b>01</b> / 05</span>
+        </div>
+        <div class="bs-final">
+          <p class="bs-final-title">Your home is next.</p>
+          <a class="btn btn-brass" href="#contact">Book a walkthrough</a>
+        </div>
+        <figure class="bs-media">
+          <canvas class="bs-canvas" role="img" aria-label="3D animation: a crew and a tower crane build a house, from survey to finished home"></canvas>
+          <figcaption class="bs-label" aria-hidden="true"><span class="bs-label-text">Surveying the lot</span></figcaption>
+          <div class="bs-progress" aria-hidden="true"><span></span></div>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -383,11 +400,11 @@
       <li><a href="index.html#contact">Book a walkthrough</a></li>
     </ul></nav>
   </div>
-  <p class="wrap footer-credit">Walkthrough footage by Kindel Media on Pexels. Sample project photos from Unsplash.</p>
+  <p class="wrap footer-credit">Walkthrough footage by Kindel Media on Pexels. Sample project photos from Unsplash. 3D workers from Microsoft Rocketbox (MIT licence).</p>
 </footer>
 <!-- /build:footer -->
 
-<script src="site.js"></script>
-<script src="walk.js"></script>
+<script src="site.js?v=20261025000446"></script>
+<script src="walk.js?v=20261025000446"></script>
 </body>
 </html>

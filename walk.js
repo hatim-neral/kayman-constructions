@@ -47,7 +47,10 @@
     const hide = () => {
       if (done) return;
       done = true;
-      setTimeout(() => intro.classList.add('is-done'), Math.max(0, 1200 - (performance.now() - shownAt)));
+      setTimeout(() => {
+        intro.classList.add('is-done');
+        setTimeout(() => intro.remove(), 800); // don't depend on the fade animation alone
+      }, Math.max(0, 1200 - (performance.now() - shownAt)));
     };
     video.addEventListener('loadeddata', hide, { once: true });
     setTimeout(hide, 3500);
