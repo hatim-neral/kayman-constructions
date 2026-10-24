@@ -154,7 +154,7 @@ a { color: inherit; }
 
 .walk {
   position: relative;
-  height: calc(100vh + 2500vh);
+  height: calc(100vh + 1100vh); /* scroll length of the walkthrough video */
   background: var(--walnut);
 }
 
@@ -1096,3 +1096,8 @@ mark.todo {
 }
 /* keep text inputs at 16px so iOS doesn't zoom in on focus */
 .field input, .field select, .field textarea { font-size: max(16px, 1rem); }
+
+/* phones swipe further per gesture, so the walkthrough needs less scroll */
+@media (max-width: 600px) {
+  .walk { height: calc(100vh + 800vh); }
+}
