@@ -4,7 +4,7 @@ Edit this file, then run `python3 build.py` to regenerate the pages.
 """
 
 # Switch back to 'https://www.kaymanconstructions.com' once the domain points at the site
-SITE_URL = 'https://hatim-neral.github.io/kayman-constructions'
+SITE_URL = 'https://kaymanconstructions.com'
 BRAND = 'Kayman Constructions'
 TAGLINE = 'Build. Develop. Deliver.'
 
